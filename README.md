@@ -4,15 +4,13 @@ This is a simple calculator to get player's USATT rating change after a tourname
 
 ### Running Enviroment Setup 
 On Mac: 
-git clone https://github.com/JieChen2000/usatt_rating_calc.git
-cd usatt_rating_calc
-mkdir venv 
-cd venv 
-python3 -m venv rating-calc
-cd .. 
-source venv/rating-calc/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
+
+* `git clone https://github.com/JieChen2000/usatt_rating_calc.git`
+* `cd usatt_rating_calc;mkdir venv; cd venv` 
+* `python3 -m venv rating-calc`
+* `cd ..` 
+* `source venv/rating-calc/bin/activate`
+* `pip install --upgrade pip;pip install -r requirements.txt`
 
 
 ### user input 
@@ -21,7 +19,7 @@ rating,lastname,firstname,winorlose(w/l) which contains win or loss against othe
 
 
 ### run the program 
-python rating_calc.py --player_name Kaye --current_rating 2034 --results_csv spartansopen.csv
+`python rating_calc.py --player_name Kaye --current_rating 2034 --results_csv spartansopen.csv`
 
 ### unit/coverage test for this repo
 coverage run tests/test_rating_calc.py 
