@@ -15,12 +15,11 @@ On Mac:
 
 ### user input 
 User needs put in player name, current rating and a result csv file with format 
-rating,lastname,firstname,winorlose(w/l) which contains win or loss against other players in the tournament. 
-
+rating,lastname,firstname,winorlose(w/l) which contains win or loss against other players in the tournament. see `spartansopen.csv` as an example.
 
 ### run the program 
 `python rating_calc.py --player_name Kaye --current_rating 2034 --results_csv spartansopen.csv`
 
-### unit/coverage test for this repo
-coverage run tests/test_rating_calc.py 
-coverage report -m --omit tests/test_rating_calc.py
+### For developer: unit/coverage test for this repo
+`coverage run tests/test_rating_calc.py`
+`coverage report -m --omit tests/test_rating_calc.py`

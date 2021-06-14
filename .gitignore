@@ -120,3 +120,6 @@ dmypy.json
 
 # Vscode
 .vscode/
+
+# user data
+data/
