@@ -1,10 +1,8 @@
 # usatt_rating_calc
 This is a simple calculator to get player's USATT rating change after a tournament. 
 
-
 ### Running Enviroment Setup 
 On Mac: 
-
 * `git clone https://github.com/JieChen2000/usatt_rating_calc.git`
 * `cd usatt_rating_calc;mkdir venv; cd venv` 
 * `python3 -m venv rating-calc`
@@ -21,5 +19,5 @@ rating,lastname,firstname,winorlose(w/l) which contains win or loss against othe
 `python rating_calc.py --player_name Kaye --current_rating 2034 --results_csv spartansopen.csv`
 
 ### For developer: unit/coverage test for this repo
-`coverage run tests/test_rating_calc.py`
-`coverage report -m --omit tests/test_rating_calc.py`
+* `coverage run tests/test_rating_calc.py`
+* `coverage report -m --omit tests/test_rating_calc.py`
