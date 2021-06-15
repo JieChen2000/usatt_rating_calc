@@ -32,18 +32,17 @@ if __name__ == "__main__":
     args = parser.parse_args()
     arguments = args.__dict__
     A = Player(arguments.pop("player_name"), arguments.pop("current_rating"))
+    # Read input and perform some quality check
     df_w_l_score = pd.read_csv(arguments.pop("results_csv"))
     if df_w_l_score.isnull().sum().sum() > 0:
         print("Input csv has missing value, exiting...")
         print(df_w_l_score)
         sys.exit(0)
+    df_w_l_score["rating"] = pd.to_numeric(df_w_l_score["rating"], errors="coerce")
     df_w_l_score["winorlose"] = df_w_l_score["winorlose"].apply(
         lambda x: x.strip(" ").lower()[0]
     )
-    #%% [markdown]
-    # ## output rating changes for the player
-
-    #%%
+    # %% output rating changes for the player
     print("For Player:", A.name)
     print("Pre Tournament rating = ", A.rating)
     points_to_add = points_for_games(A, df_w_l_score)

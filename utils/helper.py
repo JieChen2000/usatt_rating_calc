@@ -112,7 +112,7 @@ def points_for_game(A, B, win):
             points_for_player_a += 50
     else:
         print(
-            "such case is not valid: ",
+            "Warning: Not Valid Case, please fix input, skipping: ",
             A.name,
             A.rating,
             B.name,
