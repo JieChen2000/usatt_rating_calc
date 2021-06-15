@@ -1,5 +1,6 @@
 #%%
 import argparse
+import sys
 
 # from utils import helper
 from utils.helper import *
@@ -32,8 +33,12 @@ if __name__ == "__main__":
     arguments = args.__dict__
     A = Player(arguments.pop("player_name"), arguments.pop("current_rating"))
     df_w_l_score = pd.read_csv(arguments.pop("results_csv"))
+    if df_w_l_score.isnull().sum().sum() > 0:
+        print("Input csv has missing value, exiting...")
+        print(df_w_l_score)
+        sys.exit(0)
     df_w_l_score["winorlose"] = df_w_l_score["winorlose"].apply(
-        lambda x: x.strip(" ").lower()
+        lambda x: x.strip(" ").lower()[0]
     )
     #%% [markdown]
     # ## output rating changes for the player
