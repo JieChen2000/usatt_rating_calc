@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.center {
+  text-align: center;
+  border: 3px solid green;
+}
+</style>
+<script type="text/javascript" src="calcrating.js"></script>
+</head>
+
+    <body onload="createTable()">
+		<h2>
+        Here's a tool to calculate rating change after a USATT certified tournament.
+        </h2>
+        <h3>
+               Usage:<br>
+               1. Click the "Add New Match Row" button to add a new row to the table if you played more than 1 match in the tournament.<br> 
+               2. Enter opponent's rating and select whether you win the match.<br>
+               3. Click the "Calculate My New Rating" button to get your post-tournament rating.
+        </h3>
+        
+        <p>
+        <input type="button" id="addRow" value="Add New Match Row" onclick="addRow()" />
+        </p>
+        
+        <div id="cont" class="center"></div>  <!-- the container to add the TABLE -->
+        
+        <p>
+        <input type="button" id="bt" value="Calculate My New Rating" onclick="submit()" />
+        </p>
+            
+        <p id='output'></p>        
+        
+        <button onclick="window.print()">Print the Result</button>
+		<p>
+        Disclaimer: the calculation is based on <a href="https://www.teamusa.org/usa-table-tennis/ratings/rating-system" target="_blank">USATT rating explaination</a>, assuming your opponents' ratings are not adjusted. 
+        </p> 
+
+</html>
